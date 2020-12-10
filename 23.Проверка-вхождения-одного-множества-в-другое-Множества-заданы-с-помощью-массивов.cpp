@@ -9,56 +9,58 @@ using namespace std;
 
 int main()
 {
-    setlocale(LC_CTYPE, "Russian");
-
+    setlocale(LC_ALL, "Russian");
     int n;
-    int n1;
-    cout << "Введите n = ";
+    cout << "Введите размер 1 массива = ";
     cin >> n;
-    int *arr = new int[n];
+
+    int *arrA = new int[n];
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i];
+        cin >> arrA[i];
     }
-    cout << "Введите n1 = ";
-    cin >> n1;
 
-    int *arr1 = new int[n1];
-
-    for (int i = 0; i < n1; i++)
+    cout << "Введите размер 2 массива = ";
+    int m;
+    cin >> m;
+    int *arrB = new int[m];
+    for (int i = 0; i < m; i++)
     {
-        cin >> arr1[i];
+        cin >> arrB[i];
     }
-    for (int i = 0; i < n - 1; i++)
-        for (int j = 0; j < n - i - 1; j++)
-            if (arr[j] > arr[j + 1])
-            {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
-            }
 
-    for (int i = 0; i < n1 - 1; i++)
+    int c[9999];
+    int z;
+    if (n > m)
     {
-        for (int j = 0; j < n1 - i - 1; j++)
-        {
-            if (arr1[j] > arr1[j + 1])
-            {
-                int temp = arr1[j];
-                arr1[j] = arr1[j + 1];
-                arr1[j + 1] = temp;
-            }
-        }
+        z = n;
     }
-    int i = 0;
-    while (arr[i] == arr1[i] && arr[i] && arr1[i])
-        i++;
-    if (i == n || i == n1)
-        cout << "true" << endl;
     else
-        cout << "false" << endl;
-    delete[] arr;
-    delete[] arr1;
+    {
+        z = m;
+    }
+    bool flag;
+    for (int j = 0, k = 0; j < z; j++)
+    {
+        for (int i = 0; i < z; i++)
+            if (arrA[j] == arrB[i])
+            {
+                flag = true;
+                for (int l = 0; l < k; l++)
+                {
+                    if (c[l] == arrA[j])
+                    {
+                        flag = false;
+                    }
+                }
+                if (flag == true)
+                {
+                    cout << "true";
+                }
+            }
+    }
+    delete[] arrA;
+    delete[] arrB;
 
     getch();
     return 0;

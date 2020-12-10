@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-    setlocale(LC_CTYPE, "Russian");
+    setlocale(LC_ALL, "Russian");
 
     int n;
     cout << "Введите размер 1 массива = ";
