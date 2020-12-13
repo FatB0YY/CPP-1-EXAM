@@ -1,7 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <string>
-#include <conio.h>
 #include <cmath>
 #include <regex>
 #include <sstream>
@@ -14,8 +13,8 @@ int main()
     int n;
     cout << "Введите размер 1 массива = ";
     cin >> n;
-
-    int *arrA = new int[n];
+    cout << "Вводим 1 массив : " << endl;
+    int* arrA = new int[n];
     for (int i = 0; i < n; i++)
     {
         cin >> arrA[i];
@@ -24,13 +23,15 @@ int main()
     cout << "Введите размер 2 массива = ";
     int m;
     cin >> m;
-    int *arrB = new int[m];
+    cout << "Вводим 2 массив : " << endl;
+    int* arrB = new int[m];
     for (int i = 0; i < m; i++)
     {
         cin >> arrB[i];
     }
 
-    int c[7];
+
+    int* c = new int[n + m];
     int z;
     if (n > m)
     {
@@ -41,6 +42,7 @@ int main()
         z = m;
     }
     bool flag;
+    cout << "Пересечение : " << endl;
     for (int j = 0, k = 0; j < z; j++)
     {
         for (int i = 0; i < z; i++)
@@ -63,6 +65,5 @@ int main()
     }
     delete[] arrA;
     delete[] arrB;
-    getch();
     return 0;
 }

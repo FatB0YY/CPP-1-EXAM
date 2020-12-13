@@ -1,7 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <string>
-#include <conio.h>
 #include <cmath>
 #include <regex>
 #include <sstream>
@@ -11,42 +10,51 @@ int main()
 {
     setlocale(LC_ALL, "Russian");
 
-    //ввод матрицы
-    int n, m;
-    cout << "Введите n строк = ";
-    cin >> n;
-    cout << "Введите m столбцов = ";
-    cin >> m;
+    //кол строк
+    int n; cout << "Введите кол строк n = "; cin >> n;
+    //кол столбцов
+    int m; cout << "Введите кол столбцов m = "; cin >> m;
 
-    int **arr = new int *[m];
+    //выделение памяти
+    int** mat = new int* [n];
     for (int i = 0; i < n; i++)
     {
-        arr[i] = new int[n];
+        mat[i] = new int[m];
     }
 
+
+    //ввод прямоуг матрицы
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
         {
-            cin >> arr[i][j];
+            cout << "mat[" << i << "][" << j << "] = ";
+            cin >> mat[i][j];
         }
         cout << endl;
     }
 
-    //вывод матрицы
+    // вывод нашей матрицы
+    cout << "Матрица: " << endl;
     for (int i = 0; i < n; i++)
     {
-        cout << endl;
         for (int j = 0; j < m; j++)
         {
-            cout << arr[i][j] << " ";
+            cout << mat[i][j] << "  ";
         }
+        cout << endl;
     }
+
+    //логика
+
+
+    //удаление памяти
     for (int i = 0; i < n; i++)
     {
-        delete[] arr[i];
+        delete[] mat[i];
     }
-    delete[] arr;
-    getch();
+    delete[] mat;
+
+
     return 0;
 }

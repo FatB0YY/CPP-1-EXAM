@@ -46,13 +46,7 @@ int main()
     cout << "Введите  столбцы поменять местами : ";
     cin >> n1 >> n2;
 
-    for (int i = 0; i < M; i++)
-    {
-        ch = mat[i][n1 - 1];
-        mat[i][n1 - 1] = mat[i][n2 - 1];
-        mat[i][n2 - 1] = ch;
-    }
-
+        // вывод новой матрицы
     cout << "Матрица новая: " << endl;
     for (int i = 0; i < M; i++)
     {
@@ -62,7 +56,7 @@ int main()
         }
         cout << endl;
     }
-
+    // очистка памяти
     for (int i = 0; i < M; i++)
     {
         delete[] mat[i];
