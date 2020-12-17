@@ -1,7 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <string>
-#include <conio.h>
 #include <cmath>
 #include <regex>
 #include <sstream>
@@ -31,6 +30,5 @@ int main()
 
     cout << "НОД = " << x;
 
-    getch();
     return 0;
 }

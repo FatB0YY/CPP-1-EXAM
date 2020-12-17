@@ -1,15 +1,21 @@
-//вывод матрицы
+// вывод нашей матрицы
+cout << "Матрица: " << endl;
 for (int i = 0; i < n; i++)
 {
-    cout << endl;
     for (int j = 0; j < m; j++)
     {
-        cout << arr[i][j] << " ";
+        cout << mat[i][j] << "  ";
     }
+    cout << endl;
 }
+
+//логика
+
+
+//удаление памяти
 for (int i = 0; i < n; i++)
 {
-    delete[] arr[i];
+    delete[] mat[i];
 }
-delete[] arr;
+delete[] mat;
 return 0;
